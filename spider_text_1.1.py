@@ -2,8 +2,8 @@ import re
 
 
 
-pag = open('textov.txt').read() #создали переменную pag и передали ей содержимое файла методом read
-result = re.findall(r':\w{30}' , pag) #с помощью регулярного выражения нашли в тексте слова с : и 30 символьные
+pag = open('thread-f12590f508.html').read() #создали переменную pag и передали ей содержимое файла методом read
+result = set(re.findall(r':\w{10,40}' , pag)) #с помощью регулярного выражения нашли в тексте слова с 10 : и 30 символьные уникально
 
 print(result)
 #print(result)
@@ -14,12 +14,13 @@ print(result)
 
 with open("resultat.txt", "w") as file: # открыли файл 
     for  line in result:                 # создали цикл построчно в списке result
-        file.write(line + '\n')          # записали в файл построчно с помощью перехода на новую строку
+        file.write('magnet:?xt=urn:btih' + line + '\n')          # записали в файл построчно с помощью перехода на новую строку
 
-
+print(len(result)) 
 
 #itog.close() # закрыли файл
 print('Готово!  ')
+
 
 
 
