@@ -1,7 +1,7 @@
 import re
 import csv
 
-inp = 'VK_100M.txt'
+inp = 'target.txt'
 
 
 def get_reader(inp):
